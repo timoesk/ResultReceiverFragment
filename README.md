@@ -57,6 +57,11 @@ Android fragment for receiving results from services. Instance state is retained
     }
 ```
 
+### Dependencies
+```
+    compile 'net.tolleri.android:resultreceiverfragment:1.0.0'
+```
+
 ## License
 ```
 Copyright 2015 Timo Eskola
