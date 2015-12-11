@@ -1,5 +1,6 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
 
 version = "1.0.0"
 
@@ -24,6 +25,24 @@ android {
 def siteUrl = "https://github.com/timoesk/ResultReceiverFragment"
 def gitUrl = "https://github.com/timoesk/ResultReceiverFragment.git"
 group = "net.tolleri.android"
+
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
+bintray {
+    user = properties.getProperty("bintray.user")
+    key = properties.getProperty("bintray.apikey")
+
+    configurations = ['archives']
+    pkg {
+        repo = "maven"
+        name = "ResultReceiverFragment"
+        websiteUrl = siteUrl
+        vcsUrl = gitUrl
+        licenses = ["Apache-2.0"]
+        publish = true
+    }
+}
 
 install {
     repositories.mavenInstaller {
