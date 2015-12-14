@@ -11,6 +11,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
 
+import net.tolleri.android.fragments.resultreceiverfragment.BuildConfig;
+
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
